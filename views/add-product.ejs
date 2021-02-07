@@ -1,0 +1,49 @@
+<%- include('parts/header') %> <%- include('parts/navbar') %>
+
+<div class="container text-center">
+  <h3>Add product</h3>
+
+  <form action="/admin/add" method="post" enctype="multipart/form-data">
+    <input type="text"
+     class="form-control"
+      name="name"
+       placeholder="Name"
+        />
+  
+    <input
+      type="number"
+      class="form-control"
+      name="price"
+      placeholder="Price"
+    />
+   
+    <textarea
+      type="text"
+      class="form-control"
+      name="description"
+      placeholder="Description"
+    >
+</textarea>
+
+  <!-- 
+   <% let descriptionError=validationError.find(err=> err.param ===
+    'description') %> <% if(descriptionError){ %>
+    <p style="color: red"><%descriptionError.msg%></p>
+    <%}%>
+    -->
+    
+
+    <select class="form-control" name="category">
+      <option value="">choose the category</option>
+      <option value="phones">Phone</option>
+      <option value="clothes">Clothes</option>
+      <option value="computers">Computer</option>
+    </select>
+    <br />
+    <input type="file" name="image" />
+    <br />
+    <input type="submit" value="add" class="btn btn-primary" />
+  </form>
+  <br />
+</div>
+<%- include('parts/footer') %>
